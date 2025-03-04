@@ -18,8 +18,22 @@ export default function Login({ setLoggedInUser }) {
         console.error("Invalid user data received:", user);
         throw new Error("Invalid user data");
       }
-      console.log("Login successful - User role:", user.role);
+
       setLoggedInUser(user);
+
+      // Check if this is a photographer's first login
+      if (user.role === "Photographer" && !user.isVerified) {
+        // Redirect to password change page
+        navigate("/change-password", {
+          state: {
+            isFirstLogin: true,
+            email: user.email,
+          },
+        });
+        return;
+      }
+
+      // Normal login flow
       navigate("/photographers", { replace: true });
     } catch (err) {
       console.error("Login error:", err);

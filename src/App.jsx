@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
-import { Spinner } from "@radix-ui/themes";
 import { BrowserRouter } from "react-router-dom";
 import NavBar from "./components/nav/NavBar";
 import ApplicationViews from "./components/ApplicationViews";
 import { tryGetLoggedInUser } from "./managers/authManager";
+import { Toaster } from "react-hot-toast";
 import "./App.css";
 
 function App() {
-  const [loggedInUser, setLoggedInUser] = useState(undefined);
+  const [loggedInUser, setLoggedInUser] = useState(null);
 
   useEffect(() => {
     // user will be null if not authenticated
@@ -18,19 +18,25 @@ function App() {
 
   // wait to get a definite logged-in state before rendering
   if (loggedInUser === undefined) {
-    return <Spinner />;
+    return <div>Loading...</div>;
   }
 
   return (
-    <BrowserRouter>
-      <NavBar loggedInUser={loggedInUser} setLoggedInUser={setLoggedInUser} />
-      <div className="container mt-4">
-        <ApplicationViews
-          loggedInUser={loggedInUser}
-          setLoggedInUser={setLoggedInUser}
-        />
-      </div>
-    </BrowserRouter>
+    <>
+      <Toaster position="top-center" />
+      <BrowserRouter>
+        <div className="app-container">
+          <NavBar
+            loggedInUser={loggedInUser}
+            setLoggedInUser={setLoggedInUser}
+          />
+          <ApplicationViews
+            loggedInUser={loggedInUser}
+            setLoggedInUser={setLoggedInUser}
+          />
+        </div>
+      </BrowserRouter>
+    </>
   );
 }
 

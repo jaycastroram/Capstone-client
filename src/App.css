@@ -40,3 +40,62 @@
 .read-the-docs {
   color: #888;
 }
+
+.app-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* CSS Variables for consistent styling */
+:root {
+  /* Colors */
+  --blue-9: #2563eb;
+  --blue-10: #1d4ed8;
+  --blue-11: #1e40af;
+  --gray-2: #f8f9fa;
+  --gray-3: #f3f4f6;
+  --gray-4: #e5e7eb;
+  --gray-6: #d1d5db;
+  --gray-7: #9ca3af;
+  --gray-11: #374151;
+  --gray-12: #111827;
+  --green-3: #dcfce7;
+  --green-11: #15803d;
+  --amber-3: #fef3c7;
+  --amber-11: #b45309;
+  --red-4: #fecaca;
+  --red-11: #dc2626;
+
+  /* Spacing */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+
+  /* Border radius */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.375rem;
+  --radius-lg: 0.5rem;
+  --radius-full: 9999px;
+}
+
+/* Reset button styles */
+button {
+  all: unset;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+/* Basic focus styles */
+:focus-visible {
+  outline: 2px solid var(--blue-9);
+  outline-offset: 2px;
+}
+
+/* Basic transitions */
+.transition {
+  transition: all 0.2s ease-in-out;
+}

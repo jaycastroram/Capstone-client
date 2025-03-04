@@ -1,0 +1,81 @@
+.first-login-container {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+}
+
+.first-login-container h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--gray-12);
+}
+
+.tab-content {
+  padding: 2rem 0;
+}
+
+/* Progress indicator */
+.setup-progress {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.progress-step {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--gray-11);
+}
+
+.progress-step.active {
+  color: var(--blue-11);
+  font-weight: 500;
+}
+
+.progress-step.completed {
+  color: var(--green-11);
+}
+
+/* Form specific styles */
+.form-info {
+  background-color: var(--blue-3);
+  padding: 1rem;
+  border-radius: var(--radius-md);
+  margin: 1rem 0;
+}
+
+.info-text {
+  color: var(--blue-11);
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+/* Password requirements */
+.password-requirements {
+  font-size: 0.875rem;
+  color: var(--gray-11);
+  margin-top: 0.5rem;
+}
+
+.requirement {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.requirement.met {
+  color: var(--green-11);
+}
+
+/* Profile form specific styles */
+.profile-section {
+  margin-bottom: 2rem;
+}
+
+.profile-section-title {
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: var(--gray-12);
+  margin-bottom: 1rem;
+}

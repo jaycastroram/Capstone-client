@@ -1,0 +1,268 @@
+.inquiries-container {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.header h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--gray-12);
+  margin: 0;
+}
+
+.new-inquiry-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: var(--blue-9);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.new-inquiry-button:hover {
+  background-color: var(--blue-10);
+}
+
+/* Tabs */
+.tabs-root {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.tabs-list {
+  display: flex;
+  border-bottom: 1px solid var(--gray-6);
+  margin-bottom: 1rem;
+}
+
+.tab-trigger {
+  padding: 0.75rem 1.5rem;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: var(--gray-11);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.tab-trigger[data-state="active"] {
+  color: var(--blue-9);
+  border-bottom-color: var(--blue-9);
+}
+
+.tab-trigger:hover {
+  color: var(--blue-11);
+}
+
+/* Table */
+.inquiry-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.inquiry-table th,
+.inquiry-table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--gray-6);
+}
+
+.inquiry-table th {
+  font-weight: 600;
+  color: var(--gray-12);
+  background-color: var(--gray-2);
+}
+
+.inquiry-table tr:hover {
+  background-color: var(--gray-3);
+}
+
+/* Status Badge */
+.status-badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.status-badge.pending {
+  background-color: var(--yellow-4);
+  color: var(--yellow-11);
+}
+
+.status-badge.approved {
+  background-color: var(--green-4);
+  color: var(--green-11);
+}
+
+.status-badge.closed {
+  background-color: var(--gray-4);
+  color: var(--gray-11);
+}
+
+/* Dialog */
+.dialog-overlay {
+  background-color: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  inset: 0;
+  animation: overlayShow 150ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.dialog-content {
+  background-color: white;
+  border-radius: 6px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90vw;
+  max-width: 600px;
+  max-height: 85vh;
+  padding: 2rem;
+  animation: contentShow 150ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.dialog-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--gray-12);
+  margin-bottom: 1.5rem;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.form-grid > *:last-child {
+  grid-column: span 2;
+}
+
+/* Form Fields */
+[data-radix-form-field] {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+[data-radix-form-label] {
+  font-weight: 500;
+  color: var(--gray-12);
+}
+
+[data-radix-form-field] input,
+[data-radix-form-field] textarea,
+.select-trigger {
+  padding: 0.5rem;
+  border: 1px solid var(--gray-7);
+  border-radius: 4px;
+  font-size: 0.875rem;
+  width: 100%;
+}
+
+[data-radix-form-field] textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.select-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+}
+
+/* Dialog Footer */
+.dialog-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.dialog-footer button {
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.dialog-footer button[type="button"] {
+  background-color: var(--gray-3);
+  color: var(--gray-11);
+  border: 1px solid var(--gray-7);
+}
+
+.dialog-footer button[type="submit"] {
+  background-color: var(--blue-9);
+  color: white;
+  border: none;
+}
+
+.close-button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+  color: var(--gray-11);
+}
+
+/* Create Booking Button */
+.create-booking-button {
+  padding: 0.5rem 1rem;
+  background-color: var(--green-9);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.create-booking-button:hover {
+  background-color: var(--green-10);
+}
+
+/* Animations */
+@keyframes overlayShow {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes contentShow {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -48%) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
